@@ -23,18 +23,29 @@
 
     <title>Frontend Mentor | Digitalbank landing page</title>
   </head>
-  <body>
+  <body id="mobile-scroll">
     <header>
       <nav class="header-nav container">
-        <img src="images/logo-dark.svg" alt="logo-dark" />
-        <ul>
+        <img src="images/logo-dark.svg" alt="logo-dark" class="desktop-logo" />
+        <ul class="nav-menu" id="nav-menu">
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="#">Careers</a></li>
         </ul>
-        <button>Request Invite</button>
+        <button id="request-invite" class="request-invite">
+          Request Invite
+        </button>
+        <div id="toggle-menu">
+          <img src="images/icon-close.svg" alt="icon-close" id="close-btn" />
+          <img
+            src="images/icon-hamburger.svg"
+            alt="icon-hamburger"
+            id="hamburger-btn"
+          />
+        </div>
+        <div id="mobile-overlay" class="overlay"></div>
       </nav>
     </header>
 
@@ -54,6 +65,11 @@
             src="images/bg-intro-desktop.svg"
             alt="bg-intro-desktop"
             class="bg-intro-desktop"
+          />
+          <img
+            src="images/bg-intro-mobile.svg"
+            alt="bg-intro-mobile"
+            class="bg-intro-mobile"
           />
           <img
             src="images/image-mockups.png"
@@ -219,5 +235,7 @@
         >.
       </div>
     </footer>
+
+    <script src="js/main.js"></script>
   </body>
 </html>

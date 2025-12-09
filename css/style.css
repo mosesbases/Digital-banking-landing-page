@@ -11,6 +11,7 @@ html{
 body{
     font-family:"Public Sans",sans-serif;
     font-size: 10px;
+    position: relative;
 }
 
 :root{
@@ -87,6 +88,12 @@ li a{
     color: var(--Gray-600);
     text-decoration: none;
     font-size: 1.8em;
+    transition: 0.4s ease;
+    transform: translateY(0%);
+}
+
+li a:hover{
+    transform: translateY(20%);
 }
 
 button{
@@ -95,7 +102,32 @@ button{
     background-image: linear-gradient(to bottom,#32d25d,#2cb6d8);
     border-radius:4rem;
     font-size: 1.8em;
+    cursor: pointer;
     color: var(--White);
+    transition: 0.4s ease;
+}
+
+button:hover{
+    background-image: linear-gradient(to bottom,#2cb6d8,#32d25d);
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    position: absolute;
+    z-index: 7;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#toggle-menu{
+    display: none;
+    position: relative;
+    z-index: 8;
 }
 
 
@@ -125,6 +157,10 @@ main{
     top: -27rem;
     right: -44rem;
     z-index: 1;
+}
+
+.bg-intro-mobile{
+    display: none;
 }
 
 .image-mockups{
@@ -230,6 +266,7 @@ footer .container{
     display: flex;
     align-items: center;
     gap: 1rem;
+    cursor: pointer;
     margin-top: 4rem;
 }
 
@@ -252,6 +289,7 @@ footer button{
     bottom: 1rem;
     margin: auto;
     text-align: center;
+    color: var(--Green-500);
 }
     .attribution a {
     color:var(--White);
@@ -278,7 +316,7 @@ footer button{
         position: relative;
         width: 100%;
         right: 0;
-        top: -20rem;
+        top: -18rem;
     }
 
     .hero-section{
@@ -339,7 +377,57 @@ footer button{
 }
 
 @media screen and (max-width:765px){
+    .nav-menu{
+        flex-direction: column;
+        position: fixed;
+        top: 6rem;
+        background-color: var(--Blue-950);
+        z-index: 8;
+        width: 100%;
+        left: 0;
+        padding: 10rem;
+        transform: translateY(-150%);
+        transition: 0.4s ease;
+    }
 
+    .nav-menu li a{
+        padding: 1rem 0;
+    }
+
+    .nav-menu.show{
+        transform: translateY(0%);
+    }
+
+    .request-invite{
+        position: fixed;
+        top:42rem;
+        z-index: 8;
+        margin:0 4rem;
+        transition: 0.4s ease;
+        right: 0;
+        left: 0;
+        display: none;
+    }
+
+    .request-invite.show{
+        transform: translateY(0%);
+    }
+
+    #toggle-menu{
+        display: block;
+    }
+
+    #close-btn{
+        display: none;
+    }
+
+    #hamburger-btn{
+        display: block;
+    }
+
+    .overlay.show{
+        display: block;
+    }
 
 
     footer .container{
@@ -352,5 +440,40 @@ footer button{
     .footer-nav{
         flex-direction: column;
         text-align: center;
+    }
+}
+
+@media screen and (max-width:570px){
+    .bg-intro-mobile{
+        display: block;
+        width: 100%;
+        top: -3rem;
+        position: absolute;
+        left: 0;
+        z-index: 1;
+    }
+
+    .hero-content{
+        margin-top: -14rem;
+    }
+
+    h1{
+        font-size: 4em;
+    }
+
+    h2{
+        font-size: 3em;
+    }
+
+    .choosing-digitalbank {
+        text-align: center;
+    }
+
+    .digitalbank-advantages{
+        grid-template-columns: auto;
+    }
+
+    .articles-list{
+        grid-template-columns: auto;
     }
 }
